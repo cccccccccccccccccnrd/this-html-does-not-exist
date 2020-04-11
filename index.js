@@ -17,7 +17,10 @@ async function screenshot (url) {
     })
 
     const result = await page.goto(url)
-    if (result.status() === 404) return
+    if (result.status() === 404) {
+      await page.close()
+      return
+    }
   
     const name = new URL(url).hostname
     await page.screenshot({ path: `screenshots/${ name }.png` })
