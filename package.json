@@ -1,0 +1,23 @@
+{
+  "name": "this-html-does-not-exist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cccccccccccccccccnrd/this-html-does-not-exist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cccccccccccccccccnrd/this-html-does-not-exist/issues"
+  },
+  "homepage": "https://github.com/cccccccccccccccccnrd/this-html-does-not-exist#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "puppeteer": "^2.1.1"
+  }
+}
