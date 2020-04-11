@@ -7,16 +7,17 @@ async function screenshot (url) {
   console.log(url)
   try {
     const page = await browser.newPage()
+
+    page.setDefaultTimeout(10 * 1000)
+
     await page.setViewport({
       width: 1280,
       height: 720,
       deviceScaleFactor: 1
     })
 
-    page.on('response', (response) => {
-      console.log(response['_url'], response['_status'])
-    })
-    await page.goto(url)
+    const result = await page.goto(url)
+    if (result.status() === 404) return
   
     const name = new URL(url).hostname
     await page.screenshot({ path: `screenshots/${ name }.png` })
@@ -29,7 +30,7 @@ async function screenshot (url) {
 
 async function getUrls () {
   const text = fs.readFileSync('urls.txt', 'utf8')
-  return text.split('\n').slice(0, 4)
+  return text.split('\n')
 }
 
 async function init () {
