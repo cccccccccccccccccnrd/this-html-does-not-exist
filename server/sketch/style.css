@@ -28,7 +28,7 @@ small {
 
 p {
   font-size: 0.9em;
-  line-height: 1.7;
+  line-height: 1.3;
   text-transform: uppercase;
   color: blue;
 }
@@ -39,6 +39,11 @@ h1 {
   text-transform: uppercase;
   color: blue;
   text-shadow: 0em 0em 0.5em blue;
+}
+
+li {
+  list-style-type: "— ";
+  color: blue;
 }
 
 #archive {
@@ -91,18 +96,14 @@ h1 {
   color: blue;
 }
 
-.right{
+.right {
   align-self: center;
   justify-self: center;
 }
 
-.down{
-  width: 12em;
+.down {
+  width: calc(12em / 1.25);
   text-align: center;
-}
-
-li{
-  color: blue;
 }
 
 .card {
