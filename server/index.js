@@ -6,6 +6,7 @@ const urls = db.get('urls')
 
 const app = express()
 
+app.use('/sketch', express.static(path.join(__dirname, 'sketch')))
 app.use('/archive', express.static(path.join(__dirname, 'archive')))
 app.use('/screenshots', express.static(path.join(__dirname, '../scraper/screenshots')))
 
