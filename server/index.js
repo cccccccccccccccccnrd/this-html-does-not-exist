@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+const db = require('monk')(`${ process.env.DB_USER }:${ process.env.DB_PASS }@${ process.env.DB_HOST }/this-html-does-not-exist`)
+const urls = db.get('urls')
 
 const app = express()
 

@@ -1,7 +1,21 @@
+require('dotenv').config()
 const fs = require('fs')
 const puppeteer = require('puppeteer')
+const db = require('monk')(`${ process.env.DB_USER }:${ process.env.DB_PASS }@${ process.env.DB_HOST }/this-html-does-not-exist`)
+const urls = db.get('urls')
 
 let browser
+
+function store(entry) {
+  urls
+    .insert(entry)
+    .then((docs) => {
+      console.log('stored')
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
 
 async function screenshot (url) {
   console.log(url)
@@ -22,8 +36,14 @@ async function screenshot (url) {
       return
     }
   
-    const name = new URL(url).hostname
-    await page.screenshot({ path: `screenshots/${ name }.png` })
+    const hostname = new URL(url).hostname
+    const filename = `${ hostname }-${ Date.now() }`
+    await page.screenshot({ path: `screenshots/${ filename }.png` })
+
+    store({
+      screenshot: `${ filename }.png`,
+      url: url
+    })
   
     await page.close()
   } catch(error) {

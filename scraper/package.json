@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/cccccccccccccccccnrd/this-html-does-not-exist#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "monk": "^7.1.2",
     "puppeteer": "^2.1.1"
   }
 }
