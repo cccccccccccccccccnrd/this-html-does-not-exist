@@ -94,7 +94,7 @@ h1 {
   width: fit-content;
   margin: 1em 0;
   padding: 1em;
-  border-radius: 30px;
+  border-radius: 35px;
   box-shadow: 0em 0em 0.5em blue;
   cursor: crosshair;
 }
