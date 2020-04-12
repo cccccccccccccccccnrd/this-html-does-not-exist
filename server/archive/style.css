@@ -24,6 +24,7 @@ img {
 #info {
   position: absolute;
   padding: 1em 2em;
+  font-size: 0.8em;
   color: white;
   background: blue;
   border-radius: 100px;
