@@ -9,8 +9,8 @@ document.body.addEventListener('mousemove', (event) => {
   info.innerText = url
 })
 
-async function screenshots () {
-  const response = await fetch(`${ url }/api`)
+async function screenshots (from, to) {
+  const response = await fetch(`${ url }/api/archive/${ from }-${ to }`)
   const json = await response.json()
   return json.screenshots
 }
@@ -25,7 +25,7 @@ function insert(files) {
 }
 
 async function init () {
-  const imgs = await screenshots()
+  const imgs = await screenshots(0, 100)
   insert(imgs)
 }
 
