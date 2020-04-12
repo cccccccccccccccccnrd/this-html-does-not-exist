@@ -90,6 +90,16 @@ h1 {
   color: blue;
 }
 
+.right{
+  align-self: center;
+  justify-self: center;
+}
+
+.down{
+  width: 9em;
+  text-align: center;
+}
+
 .card {
   width: fit-content;
   margin: 1em 0;
