@@ -20,4 +20,4 @@ app.get('/api', (req, res) => {
   })
 })
 
-app.listen(3000, () => console.log(`http://localhost:3000`))
+app.listen(3737, () => console.log(`http://localhost:3737`))
