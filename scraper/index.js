@@ -40,9 +40,12 @@ async function screenshot (url) {
     const filename = `${ hostname }-${ Date.now() }`
     await page.screenshot({ path: `screenshots/${ filename }.png` })
 
+    const html = await page.evaluate(() => document.body.innerHTML)
+
     store({
-      screenshot: `${ filename }.png`,
-      url: url
+      url: url,
+      html: html,
+      screenshot: `${ filename }.png`
     })
   
     await page.close()
