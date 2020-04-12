@@ -64,7 +64,7 @@ async function init () {
   browser = await puppeteer.launch()
 
   for (const url of urls) {
-    const since = Math.floor((Date.now() - start) * 1000 * 60)
+    const since = Math.floor((Date.now() - start) / 1000 / 60)
     console.log(since, urls.indexOf(url), url)
     await screenshot(url)
   }
