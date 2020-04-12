@@ -1,4 +1,4 @@
-const url = window.location.hostname === 'localhost' ? 'http://localhost:3737' : 'http://thishtmldoesnotexist.com'
+const url = window.location.hostname === 'localhost' ? 'http://localhost:3737' : 'https://thishtmldoesnotexist.com'
 const info = document.querySelector('#info')
 
 document.body.addEventListener('mousemove', (event) => {
