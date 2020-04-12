@@ -19,7 +19,7 @@ function insert(files) {
   files.forEach((file) => {
     const element = document.createElement('img')
     element.setAttribute('src', `${ url }/screenshots/${ file }`)
-    element.setAttribute('data-url', `${ file }`)
+    element.setAttribute('data-url', `${ file.replace('.png', '') }`)
     document.body.appendChild(element)
   })
 }
