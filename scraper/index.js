@@ -60,11 +60,12 @@ async function getUrls () {
 
 async function init () {
   const urls = await getUrls()
-
+  const start = Date.now()
   browser = await puppeteer.launch()
 
   for (const url of urls) {
-    console.log(urls.indexOf(url), url)
+    const since = Math.floor((Date.now() - start) * 1000 * 60)
+    console.log(since, urls.indexOf(url), url)
     await screenshot(url)
   }
 
