@@ -41,16 +41,29 @@ h1 {
   text-shadow: 0em 0em 0.5em blue;
 }
 
+
+li{
+  color: blue;
+}
+
 #archive {
   position: absolute;
-  top: 0;
+  top: 5vh;
   right: 0;
   width: 40vw;
-  height: 100vh;
+  height: 95vh;
+}
+
+#archive-title{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40vw;
+  text-align: center;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .column-container {
@@ -101,9 +114,6 @@ h1 {
   text-align: center;
 }
 
-li{
-  color: blue;
-}
 
 .card {
   width: fit-content;
