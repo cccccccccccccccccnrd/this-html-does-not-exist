@@ -18,7 +18,6 @@ function store(entry) {
 }
 
 async function screenshot (url) {
-  console.log(url)
   try {
     const page = await browser.newPage()
 
@@ -61,11 +60,11 @@ async function getUrls () {
 
 async function init () {
   const urls = await getUrls()
-  console.log(urls.length)
 
   browser = await puppeteer.launch()
 
   for (const url of urls) {
+    console.log(urls.indexOf(url), url)
     await screenshot(url)
   }
 
