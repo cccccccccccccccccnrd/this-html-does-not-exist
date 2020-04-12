@@ -31,7 +31,7 @@ async function screenshot (url) {
     })
 
     const result = await page.goto(url)
-    if (result.status() === 404) {
+    if (result.status() !== 200) {
       await page.close()
       return
     }
